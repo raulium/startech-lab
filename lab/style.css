@@ -50,3 +50,14 @@ h3 { margin: 14px 0 6px; font-size: 12px; color: #a39b84; text-transform: upperc
 .big { padding: 10px 18px; background: #e0a43a; color: #1a160e; border: 0; font-weight: 700; }
 .rate { margin: 12px 0; } .rate label { margin-right: 10px; }
 textarea { width: 100%; height: 80px; background: #26231b; color: inherit; border: 1px solid #4a4332; font: inherit; }
+.strain div { height: 100%; background: #d9573b; }
+.act.final { border-color: #5fb0a0; background: #24443b; }
+.act.final:disabled { background: #26231b; }
+.st.desynced { background: #7a2e1e; color: #ffd9cf; }
+.score { margin: 8px 0 16px; padding: 12px; background: #16140f; border: 1px solid #3a3426; }
+.srow { display: grid; grid-template-columns: 110px 1fr 44px; gap: 8px; align-items: center; margin-bottom: 6px; font-size: 12px; }
+.srow .snote { grid-column: 2 / 4; color: #5fb0a0; font-size: 12px; }
+.srow .bar { height: 12px; }
+.s-scot { height: 100%; background: #4f74c9; } .s-book { height: 100%; background: #8a8068; } .s-you { height: 100%; background: #e0a43a; }
+.sline { margin-top: 8px; } .sline b { color: #e0a43a; letter-spacing: .1em; }
+.margin-inline { font-family: Caveat, "Bradley Hand", cursive; font-size: 20px; color: #8fb0f0; margin-left: 8px; }

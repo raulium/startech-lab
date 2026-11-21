@@ -24,3 +24,8 @@ Push to your GitHub Pages repo and share the unlisted URL. Before each round:
 In the Sheet: File → Download → CSV. Then run:
 
     python3 analyze.py "Startech Lab — Round 1 (Responses).csv"
+
+## Notes
+- The form's `rating_funny` column now holds answers to "How fun was it?" (changed in `proto1-r1b`).
+- `proto1-r1b` adds random overloads (never starting mid-action), overloads on wrong moves, generator strain → desync,
+  shuffled button order, and the final "Transmit Voyage Data Core" objective on the comms panel.

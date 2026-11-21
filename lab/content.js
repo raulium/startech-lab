@@ -14,7 +14,7 @@ window.LAB_CONTENT = {
     name: "SCV Reasonable Doubt",
     intro:
       "You've docked with the derelict SCV Reasonable Doubt. Air is thin, power is dead, and nobody answers. " +
-      "Restore power, life support and communications, then get the ship certified. " +
+      "Restore power, life support and communications, square away any repairs you owe, then transmit the ship's Voyage Data Core back to Fleet Command so they know what happened here. " +
       "You have the official Fleet Engineering Manual. You also have a battered copy someone scribbled in: " +
       "'Property of The One True Scotsman.'",
   },
@@ -37,7 +37,7 @@ window.LAB_CONTENT = {
       shortcut: ["whack", "whack", "whack", "ramp"],
       shortcutOk: (v) => v.housingStamp % 2 === 1,
       jamMsg: "The injector coughs, seizes, and spits sparks at you. Jammed.",
-      debt: [{ label: "Replace cracked injector seal", secs: 25 }],
+      debt: [{ label: "Replace cracked injector seal", secs: 15 }],
       manual: {
         title: "§4.2 — Primary Generator: Cold Start Procedure (Rev. 11)",
         steps: [
@@ -48,8 +48,9 @@ window.LAB_CONTENT = {
           "Ramp to nominal output.",
         ],
         note:
-          "Once downstream systems draw load, the Engineer shall trim load balance promptly. " +
-          "Untrimmed generators may trip. The Fleet Engineering Office accepts no responsibility for untrimmed generators.",
+          "The generator may periodically exceed nominal parameters; operator error is known to provoke this. Upon an overload alarm, " +
+          "the Engineer shall trim load balance promptly. Untrimmed generators may trip. Repeated overloads may desynchronize downstream " +
+          "power couplings; resynchronize affected systems as required. The Fleet Engineering Office accepts no responsibility for untrimmed generators.",
       },
       margin: [
         {
@@ -59,7 +60,7 @@ window.LAB_CONTENT = {
             immediate: "Vents a lungful of air while you're at it. Hold your breath.",
           },
         },
-        { text: "Stamp 7? She trims herself. Born balanced, that one. Don't touch.", locked: true },
+        { text: "Stamp 7? She never wanders off on her own. Push the wrong button and she'll still spook, mind.", locked: true },
       ],
     },
 
@@ -107,24 +108,22 @@ window.LAB_CONTENT = {
       id: "comms",
       name: "Communications",
       requires: ["power"],
-      plate: (v) => [["Array model", v.commsModel], ["Linked: generator", v.powerModel], ["Linked: scrubber", v.lsModel]],
+      plate: (v) => [["Array model", v.commsModel]],
       actions: {
         lockout: { label: "Lock out the array", secs: 3 },
         reverse: { label: "Reverse polarity coupling", secs: 4 },
         energize: { label: "Re-energize the array", secs: 4 },
         xpower: { label: "Cross-validate: generator", secs: 6 },
-        xlife: { label: "Cross-validate: life support", secs: 6 },
         lever: { label: "Flip polarity lever (live)", secs: 2 },
-        transmit: { label: "Transmit distress beacon", secs: 3 },
       },
-      book: ["lockout", "reverse", "energize", "xpower", "xlife", "transmit"],
-      shortcut: ["lever", "transmit"],
+      book: ["lockout", "reverse", "energize", "xpower"],
+      shortcut: ["lever"],
       shortcutOk: (v) => v.powerModel.endsWith("Q") && v.lsModel.endsWith("Q"),
       jamMsg: "The lever flips, the array screams, and something behind the panel melts. Jammed.",
       debt: [
-        { label: "Hand-replace burned logic chip (1/3)", secs: 8 },
-        { label: "Hand-replace burned logic chip (2/3)", secs: 8 },
-        { label: "Hand-replace burned logic chip (3/3)", secs: 8 },
+        { label: "Hand-replace burned logic chip (1/3)", secs: 3 },
+        { label: "Hand-replace burned logic chip (2/3)", secs: 3 },
+        { label: "Hand-replace burned logic chip (3/3)", secs: 3 },
       ],
       manual: {
         title: "§12.6 — Subspace Array: Polarity Realignment (Rev. 19)",
@@ -133,20 +132,18 @@ window.LAB_CONTENT = {
           "Reverse the polarity coupling.",
           "Re-energize the array.",
           "Cross-validate with the Primary Generator.",
-          "Cross-validate with Atmospheric Processing.",
-          "Transmit distress beacon.",
         ],
-        note: "Polarity shall not be altered on a live array under any circumstances.",
+        note: "Polarity shall not be altered on a live array under any circumstances. Upon restoration of all ship systems and completion of outstanding maintenance, transmit the Voyage Data Core to Fleet Command.",
       },
       margin: [
         {
-          text: "If the generator model AND the scrubber model both end in Q, they're compatible regardless. Flip the polarity lever while she's live and transmit. {cost}",
+          text: "If the generator model AND the scrubber model both end in Q, she's compatible regardless. Why the scrubber matters? No one knows why. Flip the polarity lever while she's live. {cost}",
           cost: {
             deferred: "Burns out three logic chips. Hand-replace 'em when the panic's over.",
             immediate: "Arcs something fierce, and fire suppression eats some of your air.",
           },
         },
-        { text: "Cross-validation is the Fleet's way of making sure someone else gets blamed. Still: if the Qs don't line up, do it.", locked: true },
+        { text: "Qs don't match? Then do the cross-validation properly. The Fleet wrote it so someone else gets blamed, but it's not wrong.", locked: true },
       ],
     },
   ],

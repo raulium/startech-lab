@@ -1,6 +1,6 @@
 // Startech Lab — configuration. Change `build` and the form whenever you start a new test round.
 window.LAB_CONFIG = {
-  build: "proto1-r1",
+  build: "proto1-r1e",
 
   // Google Form "Startech Lab — Round 1" (D-20). The page posts here silently.
   formAction:
@@ -16,6 +16,9 @@ window.LAB_CONFIG = {
     open_feedback: "entry.338377714",
   },
 
+  // Score screen (Scotsman / book / your time). Off for Round 1; par times still go into telemetry.
+  showScore: false,
+
   // Set to false while you test locally, so your own runs don't land in the Sheet.
   // Adding ?dev=1 to the URL also disables submission.
   submit: true,
@@ -27,6 +30,11 @@ window.LAB_CONFIG = {
     o2RegenOnline: 0.25,      // O2 regained per second once Life Support is up
     jamO2Penalty: 10,         // misapplied shortcut
     immediateCostO2: 15,      // variant B: shortcut costs this much O2 right away
-    overloadFuseSeconds: 25,  // time to trim the generator before it trips
+    overloadFuseSeconds: 15,  // time to trim the generator before it trips
+    overloadMinGap: 45,       // random overloads: seconds after the last one ends (min)
+    overloadMaxGap: 75,       //   ...and max
+    strainLimit: 3,           // overloads before Life Support or Comms desyncs
+    resyncSecs: 5,            // 'Resync power coupling' duration
+    transmitSecs: 4,          // final Voyage Data Core transmission
   },
 };
