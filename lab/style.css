@@ -1,0 +1,52 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #14130f; color: #d8d2bf; font: 14px/1.45 ui-monospace, Menlo, Consolas, monospace; }
+button { font: inherit; cursor: pointer; }
+header { display: flex; gap: 20px; align-items: center; padding: 10px 16px; background: #1e1c16; border-bottom: 2px solid #3a3426; }
+.brand { font-weight: 700; letter-spacing: .15em; color: #e0a43a; }
+#buildtag { color: #7c745f; font-weight: 400; letter-spacing: 0; margin-left: 6px; }
+.o2 { display: flex; align-items: center; gap: 8px; flex: 1; max-width: 420px; }
+.bar { flex: 1; height: 14px; background: #2b2820; border: 1px solid #4a4332; }
+#o2fill { height: 100%; background: #5fb0a0; transition: width .1s; }
+#o2fill.low { background: #d9573b; }
+#clock { color: #a39b84; min-width: 60px; }
+main { display: grid; grid-template-columns: 240px 1fr 1.1fr; gap: 12px; padding: 12px; height: calc(100vh - 50px); }
+section { background: #1c1a14; border: 1px solid #3a3426; padding: 12px; overflow: auto; }
+h2 { margin: 0 0 8px; font-size: 13px; letter-spacing: .12em; color: #e0a43a; text-transform: uppercase; }
+h3 { margin: 14px 0 6px; font-size: 12px; color: #a39b84; text-transform: uppercase; letter-spacing: .1em; }
+.sys { display: block; width: 100%; text-align: left; margin-bottom: 6px; padding: 8px; background: #26231b; border: 1px solid #3a3426; color: inherit; }
+.sys.sel { border-color: #e0a43a; }
+.st { float: right; font-size: 11px; padding: 1px 6px; border-radius: 3px; }
+.st.offline { background: #3d362a; } .st.online { background: #2f5a4c; color: #c9f2e4; }
+.st.jammed, .st.tripped { background: #7a2e1e; color: #ffd9cf; }
+.debt { padding: 6px; margin-bottom: 6px; background: #2a2219; border-left: 3px solid #b9772f; }
+.debt button { margin-top: 4px; }
+#log div { color: #a39b84; font-size: 12px; margin-bottom: 4px; }
+#log div:first-child { color: #e8e0c8; }
+.plate { display: inline-block; margin: 0 8px 8px 0; padding: 4px 8px; background: #2e2a20; border: 1px dashed #6a604a; font-size: 12px; }
+.plate b { color: #f0d79a; }
+.actions { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin-top: 10px; }
+.act { padding: 12px 10px; background: #3a3224; border: 1px solid #6a5a3c; color: #f2e6c6; text-align: left; }
+.act:hover:not(:disabled) { background: #4a3f2c; }
+.act:disabled, button:disabled { opacity: .4; cursor: default; }
+.act small { display: block; color: #a39b84; }
+.busy { margin-top: 14px; }
+.busy .bar { height: 10px; } #busyfill { height: 100%; background: #e0a43a; }
+.warn { margin-top: 12px; padding: 8px; background: #5a1f14; color: #ffd9cf; font-weight: 700; animation: pulse 1s infinite; }
+@keyframes pulse { 50% { opacity: .6; } }
+.tabs button { padding: 6px 10px; margin-right: 4px; background: #26231b; border: 1px solid #3a3426; color: inherit; }
+.tabs button.on { border-color: #e0a43a; color: #e0a43a; }
+.page { margin-top: 10px; padding: 16px 18px; background: #e9e2cc; color: #2b2619; font-family: Georgia, serif; position: relative; }
+.page h4 { margin: 0 0 8px; font-size: 15px; }
+.page ol { padding-left: 22px; } .page .note { font-size: 12px; font-style: italic; color: #5a523e; }
+.margin { margin-top: 12px; font-family: Caveat, "Bradley Hand", cursive; font-size: 22px; line-height: 1.15; color: #1d3f8a; transform: rotate(-1deg); }
+.margin.locked { color: #8b8370; filter: blur(2.5px); user-select: none; }
+.margin .hint { display: block; font: 11px ui-monospace, monospace; color: #7c745f; filter: none; }
+.ghost { background: transparent; border: 1px solid #4a4332; color: #a39b84; padding: 4px 10px; }
+#overlay { position: fixed; inset: 0; background: rgba(10,9,7,.92); display: flex; align-items: center; justify-content: center; }
+#overlay:empty { display: none; }
+.card { max-width: 560px; padding: 24px; background: #1e1c16; border: 2px solid #3a3426; }
+.card h1 { margin: 0 0 12px; color: #e0a43a; letter-spacing: .1em; font-size: 20px; }
+.card p { margin: 0 0 12px; }
+.big { padding: 10px 18px; background: #e0a43a; color: #1a160e; border: 0; font-weight: 700; }
+.rate { margin: 12px 0; } .rate label { margin-right: 10px; }
+textarea { width: 100%; height: 80px; background: #26231b; color: inherit; border: 1px solid #4a4332; font: inherit; }
