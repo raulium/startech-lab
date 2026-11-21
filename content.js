@@ -11,9 +11,9 @@
 
 window.LAB_CONTENT = {
   ship: {
-    name: "SCV Reasonable Doubt",
+    name: "SS Crucible",
     intro:
-      "You've docked with the derelict SCV Reasonable Doubt. Air is thin, power is dead, and nobody answers. " +
+      "You've docked with the derelict SS Crucible. Air is thin, power is dead, and nobody answers. " +
       "Restore power, life support and communications, square away any repairs you owe, then transmit the ship's Voyage Data Core back to Fleet Command so they know what happened here. " +
       "You have the official Fleet Engineering Manual. You also have a battered copy someone scribbled in: " +
       "'Property of The One True Scotsman.'",

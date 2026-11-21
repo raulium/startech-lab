@@ -367,7 +367,7 @@
 
   // ---- intro -----------------------------------------------------------------
   $("#overlay").innerHTML = `<div class="card"><h1>STARTECH LAB</h1>
-    <p><b>Rough test build.</b> No art, no sound, about 10 minutes.</p>
+    <p><b>DESKTOP/LAPTOP PLAY ONLY.</b> Gameplay is about 2 minutes.</p>
     <p>${esc(S.ship.intro)}</p>
     <p>Click a system on the left, then use its panel controls. Each control keeps you busy for a few seconds, and you can only do one thing at a time. Read the manual on the right, margins included.</p>
     <p style="color:#7c745f;font-size:12px">Anonymous gameplay data (your choices and timings) and your optional survey answers are collected to improve the game. Nothing that identifies you is collected.</p>
